@@ -83,8 +83,15 @@ Try it yourself!
 
 - Create a new table for "bills_subjects"
 -- SQLBook: Code
-# Write your own code
+-- Write your own code
+DROP TABLE IF EXISTS bills_subjects;
 
+CREATE TABLE bills_subjects (
+    "Congress"  int NOT NULL,
+    bill_number int ,
+    bill_type   varchar(30),
+    bill
+)
 
 
 -- SQLBook: Markup
