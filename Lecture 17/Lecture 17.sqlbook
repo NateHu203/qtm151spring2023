@@ -190,8 +190,8 @@ with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
 
-SELECT NATIONAL FROM drivers
-WHERE victo;
+SELECT nationality, driver_id FROM drivers
+WHERE victories > 60;
 
 
 -- SQLBook: Markup
