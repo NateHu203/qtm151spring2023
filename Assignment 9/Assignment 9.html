@@ -14782,7 +14782,7 @@ strings in multiple lines</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14793,11 +14793,37 @@ strings in multiple lines</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Write your own code</span>
 <span class="n">lap_times</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data_raw/lap_times.csv&quot;</span><span class="p">)</span>
 <span class="n">drivers</span>    <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data_raw/drivers.csv&quot;</span><span class="p">)</span>
+
+<span class="n">lap_times</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;lap_times&#39;</span><span class="p">,</span><span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="n">drivers</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;drivers&#39;</span><span class="p">,</span><span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>857</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14876,6 +14902,7 @@ strings in multiple lines</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>index</th>
       <th>driverId</th>
       <th>driverRef</th>
       <th>number</th>
@@ -14891,6 +14918,7 @@ strings in multiple lines</p>
     <tr>
       <th>0</th>
       <td>796</td>
+      <td>796</td>
       <td>ader</td>
       <td>\N</td>
       <td>\N</td>
@@ -14903,6 +14931,7 @@ strings in multiple lines</p>
     <tr>
       <th>1</th>
       <td>615</td>
+      <td>615</td>
       <td>agabashian</td>
       <td>\N</td>
       <td>\N</td>
@@ -14914,18 +14943,7 @@ strings in multiple lines</p>
     </tr>
     <tr>
       <th>2</th>
-      <td>517</td>
-      <td>amick</td>
-      <td>\N</td>
-      <td>\N</td>
-      <td>Red</td>
-      <td>Amick</td>
-      <td>1929-01-19</td>
-      <td>American</td>
-      <td>http://en.wikipedia.org/wiki/Red_Amick</td>
-    </tr>
-    <tr>
-      <th>3</th>
+      <td>591</td>
       <td>591</td>
       <td>george_amick</td>
       <td>\N</td>
@@ -14937,7 +14955,21 @@ strings in multiple lines</p>
       <td>http://en.wikipedia.org/wiki/George_Amick</td>
     </tr>
     <tr>
+      <th>3</th>
+      <td>517</td>
+      <td>517</td>
+      <td>amick</td>
+      <td>\N</td>
+      <td>\N</td>
+      <td>Red</td>
+      <td>Amick</td>
+      <td>1929-01-19</td>
+      <td>American</td>
+      <td>http://en.wikipedia.org/wiki/Red_Amick</td>
+    </tr>
+    <tr>
       <th>4</th>
+      <td>120</td>
       <td>121</td>
       <td>andretti</td>
       <td>\N</td>
@@ -14959,9 +14991,11 @@ strings in multiple lines</p>
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>153</th>
+      <td>448</td>
       <td>449</td>
       <td>ward</td>
       <td>\N</td>
@@ -14975,6 +15009,7 @@ strings in multiple lines</p>
     <tr>
       <th>154</th>
       <td>677</td>
+      <td>677</td>
       <td>webb</td>
       <td>\N</td>
       <td>\N</td>
@@ -14986,6 +15021,7 @@ strings in multiple lines</p>
     </tr>
     <tr>
       <th>155</th>
+      <td>530</td>
       <td>530</td>
       <td>weiler</td>
       <td>\N</td>
@@ -14999,6 +15035,7 @@ strings in multiple lines</p>
     <tr>
       <th>156</th>
       <td>563</td>
+      <td>563</td>
       <td>weyant</td>
       <td>\N</td>
       <td>\N</td>
@@ -15011,6 +15048,7 @@ strings in multiple lines</p>
     <tr>
       <th>157</th>
       <td>539</td>
+      <td>539</td>
       <td>dempsey_wilson</td>
       <td>\N</td>
       <td>\N</td>
@@ -15022,7 +15060,7 @@ strings in multiple lines</p>
     </tr>
   </tbody>
 </table>
-<p>158 rows × 9 columns</p>
+<p>158 rows × 10 columns</p>
 </div>
 </div>
 
@@ -15343,12 +15381,14 @@ it has a mix of upper and lower case letters</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>index</th>
       <th>raceId</th>
       <th>driverId</th>
       <th>lap</th>
       <th>position</th>
       <th>time</th>
       <th>milliseconds</th>
+      <th>index</th>
       <th>driverId</th>
       <th>driverRef</th>
       <th>number</th>
@@ -15363,12 +15403,14 @@ it has a mix of upper and lower case letters</p>
   <tbody>
     <tr>
       <th>0</th>
+      <td>0</td>
       <td>841</td>
       <td>20</td>
       <td>1</td>
       <td>1</td>
       <td>1:38.109</td>
       <td>98109</td>
+      <td>19</td>
       <td>20</td>
       <td>vettel</td>
       <td>5</td>
@@ -15381,12 +15423,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>1</th>
+      <td>1</td>
       <td>841</td>
       <td>20</td>
       <td>2</td>
       <td>1</td>
       <td>1:33.006</td>
       <td>93006</td>
+      <td>19</td>
       <td>20</td>
       <td>vettel</td>
       <td>5</td>
@@ -15399,12 +15443,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>2</th>
+      <td>2</td>
       <td>841</td>
       <td>20</td>
       <td>3</td>
       <td>1</td>
       <td>1:32.713</td>
       <td>92713</td>
+      <td>19</td>
       <td>20</td>
       <td>vettel</td>
       <td>5</td>
@@ -15417,12 +15463,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>3</th>
+      <td>3</td>
       <td>841</td>
       <td>20</td>
       <td>4</td>
       <td>1</td>
       <td>1:32.803</td>
       <td>92803</td>
+      <td>19</td>
       <td>20</td>
       <td>vettel</td>
       <td>5</td>
@@ -15435,12 +15483,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>4</th>
+      <td>4</td>
       <td>841</td>
       <td>20</td>
       <td>5</td>
       <td>1</td>
       <td>1:32.342</td>
       <td>92342</td>
+      <td>19</td>
       <td>20</td>
       <td>vettel</td>
       <td>5</td>
@@ -15468,15 +15518,19 @@ it has a mix of upper and lower case letters</p>
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>538116</th>
+      <td>538116</td>
       <td>1096</td>
       <td>822</td>
       <td>53</td>
       <td>16</td>
       <td>1:32.998</td>
       <td>92998</td>
+      <td>821</td>
       <td>822</td>
       <td>bottas</td>
       <td>77</td>
@@ -15489,12 +15543,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>538117</th>
+      <td>538117</td>
       <td>1096</td>
       <td>822</td>
       <td>54</td>
       <td>16</td>
       <td>1:32.995</td>
       <td>92995</td>
+      <td>821</td>
       <td>822</td>
       <td>bottas</td>
       <td>77</td>
@@ -15507,12 +15563,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>538118</th>
+      <td>538118</td>
       <td>1096</td>
       <td>822</td>
       <td>55</td>
       <td>16</td>
       <td>1:31.236</td>
       <td>91236</td>
+      <td>821</td>
       <td>822</td>
       <td>bottas</td>
       <td>77</td>
@@ -15525,12 +15583,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>538119</th>
+      <td>538119</td>
       <td>1096</td>
       <td>822</td>
       <td>56</td>
       <td>15</td>
       <td>1:30.566</td>
       <td>90566</td>
+      <td>821</td>
       <td>822</td>
       <td>bottas</td>
       <td>77</td>
@@ -15543,12 +15603,14 @@ it has a mix of upper and lower case letters</p>
     </tr>
     <tr>
       <th>538120</th>
+      <td>538120</td>
       <td>1096</td>
       <td>822</td>
       <td>57</td>
       <td>15</td>
       <td>1:30.743</td>
       <td>90743</td>
+      <td>821</td>
       <td>822</td>
       <td>bottas</td>
       <td>77</td>
@@ -15561,7 +15623,7 @@ it has a mix of upper and lower case letters</p>
     </tr>
   </tbody>
 </table>
-<p>538121 rows × 15 columns</p>
+<p>538121 rows × 17 columns</p>
 </div>
 </div>
 
